@@ -1,0 +1,138 @@
+<nav class="navigator row">
+  <div class="menu-item col-12">
+    <div class="navbar-brand">
+      <a class="" href="/index.html"><img src="/images/logo.png" /></a>
+    </div>
+    <button class="btn-menu-expand" id="btn-menu-expand" type="button">
+      <img class="img-fluid" src="/images/nav-hamburger.png" />
+      <p class="">MENU</p>
+    </button>
+    <a class="sign-in icon-menu-desktop" href="#" data-toggle="modal" data-target="#signin-modal">
+      <img class="" src="/images/nav-sign-in.png">
+      <p class="">SIGN IN</p>
+    </a>
+    <!-- <a class="logged-in icon-menu-desktop" href="#">
+      <img class="" src="/images/member/avatar.png" />
+      <p class="">EIRANN</p>
+      <ul class="list-group member-list-group">
+        <li class="list-group-item">Edit Profile</li>
+        <li class="list-group-item active">View Activity</li>
+        <li class="list-group-item">Sign out</li>
+      </ul>
+    </a> -->
+    <a class="booking icon-menu-desktop" href="#">
+      <img class="" src="/images/nav-calendar.png" />
+      <p class="">BOOKING</p>
+    </a>
+    <a class="shop icon-menu-desktop" href="/shop-checkout.html">
+      <img class="" src="/images/nav-shopping-cart.png" />
+      <p class="">ONLINE SHOP</p>
+    </a>
+  </div>
+  <div class="menu-item-expand" id="menu-item-expand">
+    <img id="close-menu" src="/images/close-menu.png">
+    <div class="menu-expand-wrapper">
+      <div class="icon-menu">
+        <a class="sign-in enu-expand-item" href="#" data-toggle="modal" data-target="#signin-modal">
+          <img class="" src="/images/nav-sign-in.png">
+          <p class="">SIGN IN</p>
+        </a>
+        <a class="logged-in menu-expand-item" href="#">
+          <img class="menu-expand-image" src="/images/member/avatar.png" />
+          <p class="">ERANN
+          <ul class="list-group member-list-group">
+            <li class="list-group-item">Edit Profile</li>
+            <li class="list-group-item active">View Activity</li>
+            <li class="list-group-item">Sign out</li>
+          </ul>
+          </p>
+        </a>
+        <a class="booking menu-expand-item" href="#">
+          <img class="menu-expand-image" src="/images/nav-calendar.png" />
+          <p class="">BOOKING</p>
+        </a>
+        <a class="shop menu-expand-item" href="#">
+          <img class="menu-expand-image" src="/images/nav-shopping-cart.png" />
+          <p class="">ONLINE SHOP</p>
+        </a>
+      </div>
+      <div class="menu-expand-group">
+        <a class="select" href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="/promoter.html">PROMOTER</a>
+        <a href="/academy.html">ACADEMY</a>
+        <a href="#">HOTEL</a>
+        <a href="/contact-us.html">CONTACT US</a>
+      </div>
+      <div class="translation">
+        <a class="select" href="">EN</a><span>/</span><a href="">TH</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="modal modal-signin fade" id="signin-modal" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="modal-content-signin">
+          <p class="signin-text text-1">Sign in</p>
+          <a href="#"><button class="btn btn-fb text-1">Sign in with Facebook</button></a>
+          <p class="or-text text-1 text-center">or</p>
+          <hr />
+          <form action="/signin" method="POST">
+            <div class="form-group">
+              <label for="signin-email" class="text-2">Email</label>
+              <input type="email" required name="email" id="signin-email" class="form-control form-control-lg">
+            </div>
+            <div class="form-group">
+              <label for="signin-password" class="text-2">Password</label>
+              <input type="password" required name="password" id="signin-password" class="form-control form-control-lg">
+            </div>
+            <p class="forgot-password text-1"><a href="">Forgot password</a></p>
+            <button type="submit" class="btn btn-green">Sign in</button>
+            <button type="button" class="btn btn-gray btn-register">Register</button>
+          </form>
+        </div>
+        <div class="modal-content-register">
+          <p class="register-text text-1">Register</p>
+          <a href="#">
+            <button class="btn btn-fb text-1">Register with Facebook</button>
+          </a>
+          <p class="or-text text-1 text-center">or</p>
+          <hr />
+          <form action="/register" method="POST">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="first-name-signin" class="text-2">First Name*</label>
+                <input type="text" required class="form-control form-control-lg" id="first-name-signin">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="last-name-signin" class="text-2">Last Name*</label>
+                <input type="text" required class="form-control form-control-lg" id="last-name-signin">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="tel" class="text-2">Tel*</label>
+                <input type="number" required class="form-control form-control-lg" id="first-name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="email" class="text-2">Email*</label>
+                <input type="email" required class="form-control form-control-lg" id="email">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="signin-password-2" class="text-2">Password</label>
+                <input type="password" required name="password" id="signin-password-2" class="form-control form-control-lg">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-green">Register</button>
+            <button type="button" class="btn btn-gray btn-signin">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

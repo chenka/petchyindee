@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font/supermarket/supermarket.css">
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+  <script src="/js/w3.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <title>PETCHYINDEE</title>
+</head>
+
+<body>
+  <div class="container nav-static" id="fitness-booking-choose">
+    <div w3-include-html="includes/navigator.html"></div>
+    <div class="row progress-nav">
+      <div class="col-12">
+        <ul>
+          <li class="active">Choose your training</li>
+          <li class="">Enter booking details</li>
+          <li class="">Select payment method</li>
+          <li class="">Booking completed!</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="training-info">
+          <div class="row">
+            <div class="col-12 col-md-4 banner-container">
+              <img class="img-fluid w-100" src="/images/fitness/professional-fitness.png" alt="">
+              <div class="text-overlay">
+                <p class="text-green">PROFESSIONAL</p>
+                <p>FITNESS</p>
+              </div>
+            </div>
+            <div class="col-md-5 col-12 text-desc text-vertical-middle">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nihil, ut voluptates repellat, voluptatum impedit
+                dolore fugiat, nisi distinctio nam dolor. In accusamus, facilis doloribus autem unde voluptates? Repellendus,
+                qui.</p>
+            </div>
+            <div class="col-md-3 col-12 text-vertical-middle">
+              <p class="text-green price text-right">1,200 THB
+                <br/>
+                <span class="per-day">/MONTH</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-12 mx-auto booking-list">
+        <form class="form-inline" id="form-booking" action="/fitness-booking-detail.html" method="GET">
+          <select class="form-control" name="package" id="package">
+            <option value="1" selected>Fitness 1 Month / 1,200 THB</option>
+            <option value="2">Fitness 2 Month / 2,400 THB</option>
+            <option value="3">Fitness 3 Month / 3,600 THB</option>
+            <option value="4">Fitness 4 Month / 4,8000 THB</option>
+          </select>
+          <button type="submit" class="btn btn-green-1 ">
+            Booking now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div w3-include-html="includes/footer.html"></div>
+
+  </div>
+  <script src="/js/app.js" charset="utf-8"></script>
+</body>
+
+</html>

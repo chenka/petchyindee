@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font/supermarket/supermarket.css">
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+  <script src="/js/w3.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <title>PETCHYINDEE</title>
+</head>
+
+<body>
+  <div class="container-fluid nav-static" id="shop-checkout">
+    <div w3-include-html="includes/navigator.html"></div>
+    <div w3-include-html="includes/shop-feature-bar.html"></div>
+    <div class="row progress-nav progress-nav-white">
+      <div class="col-12">
+        <ul>
+          <li class="active">Choose your training</li>
+          <li class="active">Enter booking details</li>
+          <li class="">Select payment method</li>
+          <li class="">Booking completed!</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row shop-content">
+      <div class="col-12 checkout-list-item bg-white">
+        <h3 class="title">Shipping address </h3>
+        <div class="checkout-item">
+          <form class="form-information section" method="GET" action="/shop-payment.html">
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="first-name">First name</label>
+                <input type="text" name="first-name" class="form-control" id="first-name">
+              </div>
+              <div class="form-group col-6">
+                <label for="last-name">Last name</label>
+                <input type="text" name="last-name" class="form-control" id="last-name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-12">
+                <label for="address">Address</label>
+                <input type="text" name="address" class="form-control" id="address">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="postcode">Postcode</label>
+                <input type="number" name="postcode" class="form-control" id="postcode">
+              </div>
+              <div class="form-group col-6">
+                <label for="distric">District</label>
+                <input type="text" name="district" class="form-control" id="distric">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="province">Province</label>
+                <input type="text" name="province" class="form-control" id="province">
+              </div>
+            </div>
+            <div class="form-row button-container">
+              <button type="submit" class="btn btn-green-2">
+                Continue
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="checkout-price shipping">
+          <ul class="checkout-price-item">
+            <li>
+              <span class="name">Ring fight star boxing glove</span>
+              <span class="amount">980 THB</span>
+            </li>
+            <li class="shipping-price">
+              <span class="name">EMS</span>
+              <span class="amount">50 THB</span>
+            </li>
+            <li class="divider"></li>
+            <li class="total-price">
+              <span>Price</span>
+              <span>3,000 THB</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div w3-include-html="includes/footer.html"></div>
+  </div>
+  <script src="/js/app.js" charset="utf-8"></script>
+</body>
+
+</html>

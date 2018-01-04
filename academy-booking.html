@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font/supermarket/supermarket.css">
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+  <script src="/js/w3.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <title>PETCHYINDEE</title>
+</head>
+
+<body>
+  <div class="container nav-static" id="academy-booking">
+    <div w3-include-html="includes/navigator.html"></div>
+    <div class="row progress-nav">
+      <div class="col-12">
+        <ul>
+          <li class="active">Choose your training</li>
+          <li class="">Enter booking details</li>
+          <li class="">Select payment method</li>
+          <li class="">Booking completed!</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="training-info">
+          <div class="row">
+            <div class="col-12 col-md-4 banner-container">
+              <img class="img-fluid w-100" src="/images/academy/banner.png" alt="">
+              <div class="text-overlay">
+                <p class="text-green">{{this.typeLine1}}</p>
+                <p>{{this.typeLine2}}</p>
+              </div>
+            </div>
+            <div class="col-md-5 col-12 text-desc text-vertical-middle">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nihil, ut voluptates repellat, voluptatum impedit dolore fugiat, nisi distinctio nam dolor. In accusamus, facilis doloribus autem unde voluptates? Repellendus, qui.</p>
+            </div>
+            <div class="col-md-3 col-12 text-vertical-middle">
+              <p class="text-green price text-right">500 THB<br/><span class="per-day">/DAY</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 booking-list">
+        <form id="form-booking" action="/academy-booking-detail.html" method="POST">
+          <div class="form-row form-select-info">
+            <div class="form-group col-12 col-md-4">
+              <label for="booking-date">Date Booking :</label>
+              <div class="input-group">
+                <div class="input-group-addon"><img src="/images/academy/calendar-icon.png"></div>
+                <input onkeydown="return false" type="text" id="booking-date" class="form-control">
+              </div>
+
+            </div>
+            <div class="form-group col-12 col-md-4">
+              <label for="booking-learner">Learner :</label>
+              <div class="input-group">
+                <div class="input-group-addon input-group-addon-learner">
+                  <img src="/images/academy/user-icon.png">
+                </div>
+                <select class="form-control" v-model="learner"  id="booking-learner">
+                  <option value="1" >1 adults</option>
+                  <option value="2" selected>2 adults</option>
+                  <option value="3" >3 adults</option>
+                  <option value="4" >4 adults</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group from-group-button col-12 col-md-4 mt-4">
+              <button type="button" class="btn btn-green-1" v-on:click="addTraining">
+                Add Training
+              </button>
+            </div>
+          </div>
+          <div v-if="bookingList.length > 0">
+            <table class="table table-bordered">
+              <tr v-for="(booking,index) in bookingList">
+                <td class="date">{{booking.dateText}}</td>
+                <td class="type">
+                  <p class="line-1">{{booking.textLine1}}</p>
+                  <p class="line-2">{{booking.textLine2}}</p>
+                </td>
+                <td class="button-col"><button type="button" v-on:click="deleteTraining(index)" class="btn btn-red">Delete</button></td>
+              </tr>
+            </table>
+            <div class="col-12 text-center">
+              <input type="hidden" name="booking-list" id="booking-list">
+              <button type="submit" class="btn btn-green-2">
+                Continue
+              </button>
+            </div>
+          </div>
+          <div v-else>
+            Please select date and learner.
+          </div>
+      </form>
+      </div>
+    </div>
+
+    <div w3-include-html="includes/footer.html"></div>
+
+  </div>
+  <script src="/js/app.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font/supermarket/supermarket.css">
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+  <script src="/js/w3.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <title>PETCHYINDEE</title>
+</head>
+
+<body>
+  <div class="container-fluid" id="hotel">
+    <div w3-include-html="includes/navigator.html"></div>
+    <div class="row cover">
+      <div class="col-12 p-0">
+        <img class="img-fluid img-cover" src="/images/hotel/hotel-cover.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 search">
+        <form action="/hotel.html" method="GET">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="booking-date">Check-in:</label>
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <img src="/images/academy/calendar-icon.png">
+                </div>
+                <input onkeydown="return false" name="check-in" type="text" id="check-in" class="form-control">
+              </div>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="booking-date">Check-out:</label>
+              <div class="input-group">
+                <div class="input-group-addon input-group-addon-learner">
+                  <img src="/images/academy/calendar-icon.png">
+                </div>
+                <input onkeydown="return false" name="check-out" type="text" id="check-out" class="form-control">
+              </div>
+            </div>
+            <div class="form-group col-12 col-md-3">
+              <label>Travelers :</label>
+              <div class="input-group">
+                <div class="input-group-addon input-group-addon-learner">
+                  <img src="/images/academy/user-icon.png">
+                </div>
+                <select class="form-control" name="adults" id="adults">
+                  <option value="1">1 adults</option>
+                  <option value="2" selected>2 adults</option>
+                  <option value="3">3 adults</option>
+                  <option value="4">4 adults</option>
+                </select>
+                <select class="form-control" name="children" id="children">
+                  <option value="0" selected>0 children</option>
+                  <option value="1">1 children</option>
+                  <option value="2">2 children</option>
+                  <option value="3">3 children</option>
+                  <option value="4">4 children</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-3">
+              <button type="submit" class="btn btn-green-1">
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 room-list">
+        <div class="room-item">
+          <p class="title">KING BED</p>
+          <div class="room-info row">
+            <div class="col-md-8 room-desc">
+              <img src="/images/hotel/room.png" class="room-img img-fluid w-50">
+              <div class="text-desc-container">
+                <p class="text-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam minus mollitia temporibus sed illo deleniti nobis totam alias quia aut delectus molestiae magni eaque, odio ratione. Assumenda, officiis iste?</p>
+                <ul class="room-feaure-list">
+                  <li class="room-feature-item">
+                    <img class="room-feature-img">
+                    <span class="room-feature-text">1 bahtroom</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 room-price">
+              <p class="price">1,200 THB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div w3-include-html="includes/footer.html"></div>
+  </div>
+  <script src="/js/app.js" charset="utf-8"></script>
+</body>
+
+</html>

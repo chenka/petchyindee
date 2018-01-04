@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font/supermarket/supermarket.css">
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+  <script src="/js/w3.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <title>PETCHYINDEE</title>
+</head>
+
+<body>
+  <div class="container-fluid" id="member">
+    <div w3-include-html="includes/navigator.html"></div>
+    <div class="row member-profile">
+      <div class="col-12 image-container p-0">
+        <img class="img-fluid w-100" src="/images/member/cover.png">
+        <div class="member-info">
+          <img class="img-avatar img-fluid" src="/images/member/avatar.png">
+          <p class="name">Eirean Savitri</p>
+          <p class="member-no">Member NO: 11029</p>
+          <button class="btn btn-edit-profile">
+            <a href="#">
+              <span>Edit profile</span>
+              <img class="btn-icon" src="/images/member/edit-icon.png">
+            </a>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div class="row bg-cream member-content">
+      <div class="col member-menu-container">
+        <ul class="member-menu list-group">
+          <li class="list-group-item">
+            <a href="#">
+              <img class="list-group-item-icon" src="/images/member/boxing-icon.png"></img>
+              Course
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">
+              <img class="list-group-item-icon" src="/images/member/room-icon.png"></img>
+              Room
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">
+              <img class="list-group-item-icon" src="/images/member/order-icon.png"></img>
+              Order
+            </a>
+          </li>
+          <li class="list-group-item active">
+            <a href="#">
+              <img class="list-group-item-icon" src="/images/member/ticket-icon.png"></img>            
+              Ticket
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9 content">
+        <div class="filter-group">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="status">Select Status</label>
+              <div class="input-green arrow">
+                <select class="form-control" name="status" id="status">
+                  <option value="activate">Activate</option>
+                  <option value="cancel">Cancel</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-5">
+              <label for="date">Filter by date</label>
+              <div class="input-green input-daterange" id="date">
+                <input onkeydown="return false" type="text" class="form-control start-date" name="start-date" />
+                <span class="input-group-addon ">to</span>
+                <input onkeydown="return false" type="text" class="form-control end-date" name="end-date" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="table table-row-border">
+          <thead>
+            <tr>
+              <th>Course name</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Private training boxing</td>
+              <td>16 August 2017 - 21 August 2017</td>
+              <td>
+                <span class="badge badge-success">ACTIVATE</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Room King bed</td>
+              <td>16 August 2017 - 21 August 2017</td>
+              <td>
+                <span class="badge badge-success">ACTIVATE</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Private training boxing</td>
+              <td>16 August 2017 - 21 August 2017</td>
+              <td>
+                <span class="badge badge-danger">CANCEL</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div w3-include-html="includes/footer.html"></div>
+
+  </div>
+  <script src="/js/app.js" charset="utf-8"></script>
+</body>
+
+</html>
