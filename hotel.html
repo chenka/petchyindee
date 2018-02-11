@@ -11,7 +11,6 @@
   <script src="/js/popper.min.js"></script>
   <script src="/js/jquery-3.2.1.slim.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/vue.min.js"></script>
   <script src="/js/w3.js"></script>
   <script src="/js/bootstrap-datepicker.min.js"></script>
   <title>PETCHYINDEE</title>
@@ -20,87 +19,257 @@
 <body>
   <div class="container-fluid" id="hotel">
     <div w3-include-html="includes/navigator.html"></div>
-    <div class="row cover">
-      <div class="col-12 p-0">
-        <img class="img-fluid img-cover" src="/images/hotel/hotel-cover.png">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 search">
-        <form action="/hotel.html" method="GET">
-          <div class="form-row">
-            <div class="form-group col-md-3">
-              <label for="booking-date">Check-in:</label>
-              <div class="input-group">
-                <div class="input-group-addon">
-                  <img src="/images/academy/calendar-icon.png">
+
+    <div class="modal hotel-gallery-modal fade" id="hotel-gallery-modal" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="gallery-container">
+              <div class="gallery">
+                <div class="img-active-container">
+                  <img src="/images/hotel/arrow-left.png" class="arrow-left">
+                  <img src="/images/hotel/arrow-right.png" class="arrow-right">
+                  <img class="close-button" data-dismiss="modal" src="/images/hotel/close-button.png">
+                  <img class="img-active">
                 </div>
-                <input onkeydown="return false" name="check-in" type="text" id="check-in" class="form-control">
-              </div>
-            </div>
-            <div class="form-group col-md-3">
-              <label for="booking-date">Check-out:</label>
-              <div class="input-group">
-                <div class="input-group-addon input-group-addon-learner">
-                  <img src="/images/academy/calendar-icon.png">
+                <div class="img-thumbnails">
                 </div>
-                <input onkeydown="return false" name="check-out" type="text" id="check-out" class="form-control">
               </div>
             </div>
-            <div class="form-group col-12 col-md-3">
-              <label>Travelers :</label>
-              <div class="input-group">
-                <div class="input-group-addon input-group-addon-learner">
-                  <img src="/images/academy/user-icon.png">
-                </div>
-                <select class="form-control" name="adults" id="adults">
-                  <option value="1">1 adults</option>
-                  <option value="2" selected>2 adults</option>
-                  <option value="3">3 adults</option>
-                  <option value="4">4 adults</option>
-                </select>
-                <select class="form-control" name="children" id="children">
-                  <option value="0" selected>0 children</option>
-                  <option value="1">1 children</option>
-                  <option value="2">2 children</option>
-                  <option value="3">3 children</option>
-                  <option value="4">4 children</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group col-md-3">
-              <button type="submit" class="btn btn-green-1">
-                Search
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 room-list">
-        <div class="room-item">
-          <p class="title">KING BED</p>
-          <div class="room-info row">
-            <div class="col-md-8 room-desc">
-              <img src="/images/hotel/room.png" class="room-img img-fluid w-50">
-              <div class="text-desc-container">
-                <p class="text-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam minus mollitia temporibus sed illo deleniti nobis totam alias quia aut delectus molestiae magni eaque, odio ratione. Assumenda, officiis iste?</p>
-                <ul class="room-feaure-list">
-                  <li class="room-feature-item">
-                    <img class="room-feature-img">
-                    <span class="room-feature-text">1 bahtroom</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-3 room-price">
-              <p class="price">1,200 THB</p>
+            <div class="text-wrapper">
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="row cover">
+      <div class="col-12 p-0">
+        <img class="img-fluid img-cover" src="/images/hotel/hotel-cover.png">
+      </div>
+    </div>
+
+    <form action="/hotel.html" method="GET" data-booking-action="/hotel-booking.html" id="form-hotel-search">
+      <input type="hidden" name="room-id">
+      <div class="row">
+        <div class="col-12 hotel-search">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="booking-date">Check-in:</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <img src="/images/academy/calendar-icon.png">
+                  </div>
+                  <input onkeydown="return false" required name="check-in" type="text" id="check-in" class="form-control">
+                </div>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="booking-date">Check-out:</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <img src="/images/academy/calendar-icon.png">
+                  </div>
+                  <input onkeydown="return false" required name="check-out" type="text" id="check-out" class="form-control">
+                </div>
+              </div>
+              <div class="form-group col-md-4 traveler-group">
+                <label>Travelers :</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <img src="/images/academy/user-icon.png">
+                  </div>
+                  <select class="form-control select-adult" name="adults">
+                    <option value="1">1 adults</option>
+                    <option value="2" selected>2 adults</option>
+                    <option value="3">3 adults</option>
+                    <option value="4">4 adults</option>
+                  </select>
+                  <div class="input-group-addon input-group-addon-children">
+                    <img src="/images/academy/user-icon.png">
+                  </div>
+                  <select class="form-control select-children" name="children">
+                    <option value="0" selected>0 children</option>
+                    <option value="1">1 children</option>
+                    <option value="2">2 children</option>
+                    <option value="3">3 children</option>
+                    <option value="4">4 children</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group col-12">
+                <button type="submit" class="btn btn-green-1">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-12 room-list">
+          <div class="room-item">
+            <p class="title">KING BED</p>
+            <div class="room-info row">
+              <div class="col-12 col-md-8 room-desc">
+                <div class="room-info-modal">
+                  <div class="room-info-modal-images">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-cover-thumbnail.png" data-image="/images/hotel/hotel-cover.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                  </div>
+                </div>
+                <img src="/images/hotel/room.png" class="room-img img-fluid">
+                <div class="text-desc-container">
+                  <p class="text-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam minus mollitia temporibus sed illo deleniti nobis totam alias quia aut delectus molestiae magni eaque, odio ratione. Assumenda, officiis iste?</p>
+                  <p class="title-feature">Features</p>
+                  <ul class="room-feaure-list">
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/toilet-icon.png">
+                      <span class="room-feature-text">1 bahtroom</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/bed-icon.png">
+                      <span class="room-feature-text">1 king bed</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/square-icon.png">
+                      <span class="room-feature-text">29 sq.m.</span>
+                    </li>
+                  </ul>
+                  <p class="title-feature">Bed types</p>
+                  <ul class="room-feaure-list">
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/bed-icon.png">
+                      <span class="room-feature-text">1 king bed</span>
+                    </li>
+                  </ul>
+                  <p class="title-feature">Entertainment</p>
+                  <ul class="room-feaure-list">
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/wifi-icon.png">
+                      <span class="room-feature-text">Free Wi-Fi in all rooms</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/tv-icon.png">
+                      <span class="room-feature-text">cable channels</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/tv-icon.png">
+                      <span class="room-feature-text">TV</span>
+                    </li>
+                  </ul>
+                  <p class="title-feature">Comforts</p>
+                  <ul class="room-feaure-list">
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/air-icon.png">
+                      <span class="room-feature-text">Air conditioning</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md room-price">
+                <div class="price-text-container">
+                  <p class="price-actual">1,200 THB</p>
+                  <p class="price-discount">1,200 THB</p>
+                </div>
+              </div>
+              <div class="col-12 col-md book-button-container">
+                <button type="submit" data-room-id="1" class="btn btn-green-2">Book now</button>
+              </div>
+            </div>
+          </div>
+          <div class="room-item">
+            <p class="title">KING BED</p>
+            <div class="room-info row">
+              <div class="col-12 col-md-8 room-desc">
+                <div class="room-info-modal">
+                  <div class="room-info-modal-images">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-cover-thumbnail.png" data-image="/images/hotel/hotel-cover.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+
+                  </div>
+                </div>
+                <img src="/images/hotel/room.png" class="room-img img-fluid">
+                <div class="text-desc-container">
+                  <p class="text-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam minus mollitia temporibus sed illo deleniti nobis
+                    totam alias quia aut delectus molestiae magni eaque, odio ratione. Assumenda, officiis iste?</p>
+                  <ul class="room-feaure-list">
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/toilet-icon.png">
+                      <span class="room-feature-text">1 bahtroom</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/bed-icon.png">
+                      <span class="room-feature-text">1 king bed</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/square-icon.png">
+                      <span class="room-feature-text">29 sq.m.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md room-price">
+                <div class="price-text-container">
+                  <p class="price-actual">1,200 THB</p>
+                  <p class="price-discount">1,200 THB</p>
+                </div>
+              </div>
+              <div class="col-12 col-md book-button-container">
+                <button type="submit" data-room-id="2" class="btn btn-green-2">Book now</button>
+              </div>
+            </div>
+          </div>
+          <div class="room-item">
+            <p class="title">KING BED</p>
+            <div class="room-info row">
+              <div class="col-12 col-md-8 room-desc">
+                <div class="room-info-modal">
+                  <div class="room-info-modal-images">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                    <img data-thumbnail="/images/hotel/hotel-gallery-thumbnail.png" data-image="/images/hotel/hotel-gallery.png">
+                  </div>
+                </div>
+                <img src="/images/hotel/room.png" class="room-img img-fluid">
+                <div class="text-desc-container">
+                  <p class="text-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam minus mollitia temporibus sed illo deleniti nobis
+                    totam alias quia aut delectus molestiae magni eaque, odio ratione. Assumenda, officiis iste?</p>
+                  <ul class="room-feaure-list">
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/toilet-icon.png">
+                      <span class="room-feature-text">1 bahtroom</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/bed-icon.png">
+                      <span class="room-feature-text">1 king bed</span>
+                    </li>
+                    <li class="room-feature-item">
+                      <img class="room-feature-img" src="/images/hotel/square-icon.png">
+                      <span class="room-feature-text">29 sq.m.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md room-price">
+                <div class="price-text-container">
+                  <p class="price-actual">1,200 THB</p>
+                  <p class="price-discount">1,200 THB</p>
+                </div>
+              </div>
+              <div class="col-12 col-md book-button-container">
+                <button type="submit" data-room-id="3" class="btn btn-green-2">Book now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
     <div w3-include-html="includes/footer.html"></div>
   </div>
   <script src="/js/app.js" charset="utf-8"></script>

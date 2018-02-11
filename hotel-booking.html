@@ -18,12 +18,14 @@
 </head>
 
 <body>
-  <div class="container nav-static" id="academy-booking-detail">
+  <div class="container nav-static" id="hotel-booking-detail">
     <div w3-include-html="includes/navigator.html"></div>
     <div class="row progress-nav">
       <div class="col-12">
         <ul>
-          <li class="active"><a href="/academy-booking.html?type=professional-training">Choose your training</a></li>
+          <li class="active">
+            <a href="/hotel.html">Choose your room</a>
+          </li>
           <li class="active">Enter booking details</li>
           <li class="">Select payment method</li>
           <li class="">Booking completed!</li>
@@ -32,42 +34,45 @@
     </div>
     <div class="row">
       <div class="col-12 checkout-list-item">
-        <h3 class="title">Training details</h3>
+        <h3 class="title">Enter booking details</h3>
         <div class="checkout-item">
-          <ul>
-            <li>
-              <span>Professional training</span>
-              <span>17 Jan 2017</span>
-              <span>2 adults</span>
-            </li>
-            <li>
-              <span>Professional training</span>
-              <span>17 Jan 2017</span>
-              <span>2 adults</span>
-            </li>
-            <li>
-              <span>Professional training</span>
-              <span>17 Jan 2017</span>
-              <span>2 adults</span>
-            </li>
-        </ul>
+          <div class="gallery gallery-embed">
+            <div class="img-active-container">
+              <img class="img-active" src="/images/hotel/hotel-gallery.png">
+            </div>
+            <div class="img-thumbnails">
+            </div>
+          </div>
+          <div class="hotel-info">
+            <p class="title">KING BED</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vel, ut, quis repudiandae saepe accusamus, alias minus atque ipsum dignissimos ratione neque suscipit! Dolorum iste obcaecati quod mollitia recusandae. Fuga!</p>
+            <div class="booking-info">
+              <p>Check-in : Wednesday, April 5, 2017</p>
+              <p>Checkout-out : Thursday, April 6, 2017</p>
+              <p>Stay : 1 night, 1 room, 2 adults</p>
+              <p>Rooms: 1 x Deluxe Room at Concourse A</p>
+            </div>
+          </div>
         </div>
         <div class="checkout-price">
-            <ul class="checkout-price-item">
-              <li>
-                <span class="name">Professional training x 2</span>
-                <span class="amount">1,000 THB</span>
-              </li>
-              <li class="divider"></li>
-              <li class="total-price"><span>Price</span><span>3,000 THB</span></li>
-            </ul>
+          <ul class="checkout-price-item">
+            <li>
+              <span class="name">Price (1 room x 1 night)</span>
+              <span class="amount"><p class="discount">2,000 THB</p><p>1,000 THB</p></span>
+            </li>
+            <li class="divider"></li>
+            <li class="total-price">
+              <span>Price</span>
+              <span>3,000 THB</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-12 information checkout-section">
         <h3 class="title">Your information</h3>
-        <form class="form-information section" method="GET" action="/academy-booking-payment.html">
+        <form class="form-information section" method="GET" action="/hotel-booking-payment.html">
           <div class="form-row">
             <div class="form-group col-6">
               <label for="info-first-name">First name</label>

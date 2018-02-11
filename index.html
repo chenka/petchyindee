@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/font/supermarket/supermarket.css">
   <script src="/js/popper.min.js"></script>
+  <script src="/js/vue.min.js"></script>
   <script src="/js/jquery-3.2.1.slim.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/vue.min.js"></script>
   <script src="/js/w3.js"></script>
   <script src="/js/bootstrap-datepicker.min.js"></script>
   <title>PETCHYINDEE</title>
@@ -66,28 +66,36 @@
           <img class="img-fluid d-block mx-auto mt-4"src="/images/text-3.png" />
         </div>
       </div>
-      
     </div>
-    <div class="row activities no-gutters">
-      <div class="col-12 col-md-10 col-md-4 activity">
-        <img src="/images/muay-thai.png" />
-        <div class="caption">
-          <h4 class="text-green">PROFESSIONAL TRAINING</h4>
-          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus iste voluptates velit nam dolor consequuntur quisquam ea vel, dolorum. Laboriosam placeat, cumque mollitia dolores totam fugit, neque amet quisquam optio.</p>
+    <div class="row ">
+      <div class="col-md-4 activity">
+        <div class="activity-container">
+          <img src="/images/muay-thai.png" />
+          <div class="caption">
+            <h4 class="text-green">MUAY THAI</h4>
+            <p class="desc">This class is a fun basic introduction to Muay Thai in a group-training environment where everyone learns how to kick, punch
+            and use their knees and elbows.</p>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-md-10 col-md-4 activity">
-        <img src="/images/circuit-training.png" />
-        <div class="caption">
-          <h4 class="text-green">PRIVATE TRAINING</h4>
-          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus iste voluptates velit nam dolor consequuntur quisquam ea vel, dolorum. Laboriosam placeat, cumque mollitia dolores totam fugit, neque amet quisquam optio.</p>
+      <div class="col-md-4 activity">
+        <div class="activity-container">
+          <img src="/images/group-class.png" />
+          <div class="caption">
+            <h4 class="text-green">TEMPO TRAMP</h4>
+            <p class="desc">Bouncing on a mini trampoline is an enjoyable low-impact workout that can provide you with numerous cardiovascular, health
+            and fitness benefits.</p>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-md-10 col-md-4 activity">
-        <img src="/images/group-class.png" />
-        <div class="caption">
-          <h4 class="text-green">GROUP CLASS</h4>
-          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus iste voluptates velit nam dolor consequuntur quisquam ea vel, dolorum. Laboriosam placeat, cumque mollitia dolores totam fugit, neque amet quisquam optio.</p>
+      <div class="col-md-4 activity">
+        <div class="activity-container">
+          <img src="/images/circuit-training.png" />
+          <div class="caption">
+            <h4 class="text-green">CIRCUIT TRAINING</h4>
+            <p class="desc">Is a form of body conditioning or resistance training using high-intensity aerobics. It targets strength building or muscular
+            endurance.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -182,36 +190,43 @@
       </div>
     </div>
     <div class="fitness-hotel row">
-      <div class="col-6 fitness relative p-0">
-        <div class="text absolute">
-          <h1 class="text-green heading-1">FITNESS</h1>
-          <div class="next-page-box">
-            <div class="arrow-next">
-              <img src="/images/arrow-next.png" />
-            </div>
-            <div class="text">PACKAGES</div>
-          </div>
-        </div>
-        <img class="img-fluid" src="/images/fitness.png" />
-      </div>
       <div class="col-6 hotel potision-relative p-0">
         <div class="text absolute">
           <h1 class="text-green heading-1">HOTEL</h1>
           <div class="roomtype next-page-box">
-            <div class="arrow-next">
-              <img src="/images/arrow-next.png" />
-            </div>
-            <div class="text">ROOMTYPE</div>
+            <a href="/hotel.html">
+              <div class="arrow-next">
+                <img src="/images/arrow-next.png" />
+              </div>
+              <div class="text">ROOMTYPE</div>
+            </a>
           </div>
           <div class="pages next-page-box mt-2">
-            <div class="arrow-next">
-              <img src="/images/arrow-next.png" />
-            </div>
-            <div class="text">PACKAGES</div>
+            <a href="/hotel.html">
+              <div class="arrow-next">
+                <img src="/images/arrow-next.png" />
+              </div>
+              <div class="text">PACKAGES</div>
+            </a>
           </div>
         </div>
         <img class="img-fluid" src="/images/hotel.png" />
+      </div>  
+      <div class="col-6 fitness relative p-0">
+        <div class="text absolute">
+          <h1 class="text-green heading-1">FITNESS</h1>
+          <div class="next-page-box">
+            <a href="/fitness-booking.html">
+              <div class="arrow-next">
+                <img src="/images/arrow-next.png" />
+              </div>
+              <div class="text">PACKAGES</div>
+            </a>
+          </div>
+        </div>
+        <img class="img-fluid" src="/images/fitness.png" />
       </div>
+
     </div>
     
     <div class="row follow padding-l-2">
