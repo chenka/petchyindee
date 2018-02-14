@@ -509,9 +509,16 @@ a:hover {
   margin-top: 40px;
 }
 
+.follow .img-wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .follow .img-container {
-  float: left;
-  margin-top: 40px;
+  margin-top: 4.5em;
+  max-width: 20%;
+  margin-right: 5%;
 }
 
 .footer {
