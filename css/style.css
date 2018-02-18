@@ -254,20 +254,18 @@ a:hover {
 }
 
 .carousel .text-overlay {
-  top: 20%;
+  top: 0;
   left: 0;
   right: 0;
   position: absolute;
+  width: 50%;
+  margin: 0 auto;
 }
 
-
-
-.carousel .logo-2 {
-  height: 177px;
-}
 
 .academy .logo-2 {
-  margin-top: 80px;
+  margin-top: 50px;
+  width: 25%;
 }
 
 .promoter .text-overlay {
@@ -442,32 +440,50 @@ a:hover {
   width: 100%;
 }
 
-.activities .caption {
-  color: #cdcdcd;
-  /* padding: 27px; */
+.activity-container {
+  background-color: black;
+  margin-top: -35%;
+  margin-bottom: 30px;
+  padding: 0 5%;
 }
 
-.activity-container {
-  margin: 0 auto;
-  background-color: black;
+.activity-container .row:nth-child(2) {
+  margin-top: 30px;
 }
+
+
 .activity-container img {
   width: 100%;
 }
 
-.activity .text-green {
-  margin-top: 1rem;
-  font-size: 36px;
+.activity {
+  font-size: 1.3vw;
+}
+
+.activity .title-container {
+  overflow: hidden;
+  background: black;
+}
+
+.activity .view-more {
+  background: #00793a;
+  color: white;
+  padding: .7em .6em;
+  font-size: .8em;
+  float: right;
+  width: 30%;
+  text-align: center;
 }
 
 .activity .title {
   text-align: left;
+  font-size: 1.5em;
+  color: #00793a;
+  float: left;
+  padding: 0px 0px 0px 10px;
+  width: 70%;
 }
 
-.activity .desc {
-  font-size: 25px;
-  font-weight: normal;
-}
 
 .next-page-box {
   border: 1px solid white;
@@ -568,7 +584,7 @@ a:hover {
   }
 
   .carousel .text-overlay {
-    top: 10%;
+    top: 0;
     left: 0;
     right: 0;
     position: absolute;
@@ -605,6 +621,14 @@ a:hover {
   }
   .share-fixed {
     display: none;
+  }
+  .activity-container {
+    margin: 0;
+    padding: 0;
+  }
+  .activity {
+    padding: 0;
+    font-size: 1.8rem;
   }
 }
 
